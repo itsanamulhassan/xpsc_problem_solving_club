@@ -10,14 +10,54 @@ int main()
 
     while (t--)
     {
-        string str;
-        cin >> str;
+        map<long long, char> ma;
+        long long n, index;
+        string s;
+        cin >> s;
+        n = (long long)s.size();
+        stack<long long> uppercase, lowercase;
 
-        for (char c : str)
+        for (long i = 0; i < n; i++)
         {
-            cout << c << " ";
+            if (s[i] == 'B')
+            {
+                if (!uppercase.empty())
+                {
+                    index = uppercase.top();
+                    ma[index] = '$';
+                    uppercase.pop();
+                }
+                continue;
+            }
+            if (s[i] == 'b')
+            {
+                if (!lowercase.empty())
+                {
+                    index = lowercase.top();
+                    ma[index] = '$';
+                    lowercase.pop();
+                }
+                continue;
+            }
+
+            ma[i] = s[i];
+            if (isupper(s[i]))
+            {
+                uppercase.push(i);
+            }
+            else
+            {
+                lowercase.push(i);
+            }
         }
 
+        for (int i = 0; i < n; i++)
+        {
+            if (ma.count(i) && ma[i] != '$')
+            {
+                cout << ma[i];
+            }
+        }
         cout << endl;
     }
 
