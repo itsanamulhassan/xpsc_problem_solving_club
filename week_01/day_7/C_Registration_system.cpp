@@ -7,16 +7,23 @@ int main()
 
     int n;
     cin >> n;
-    vector<string> user_list(n);
+
+    map<string, int> database;
+    string s;
+
     for (int i = 0; i < n; i++)
-
     {
-        cin >> user_list[i];
-    }
-
-    for (string s : user_list)
-    {
-        cout << s << endl;
+        cin >> s;
+        if (database.count(s) == 0)
+        {
+            cout << "OK" << endl;
+            database[s] = 1;
+        }
+        else
+        {
+            cout << s << database[s] << endl;
+            database[s] += 1;
+        }
     }
     return 0;
 }
