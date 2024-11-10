@@ -16,11 +16,14 @@ int main()
     }
     s.pop_back();
 
-    cout << s.empty() << endl;
-    s.clear();
-    cout << s.empty() << endl;
+    // cout << s.empty() << endl;
+    // s.clear();
+    // cout << s.empty() << endl;
 
-    cout << s << endl;
+    // cout << s << endl;
+
+    string sub_str = s.substr(0, 2);
+    cout << sub_str << endl;
 
     return 0;
 }
