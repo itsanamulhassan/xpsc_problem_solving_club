@@ -20,7 +20,7 @@ int main()
         for (int i = n; i > k; i--)
         {
 
-            cout << i << "";
+            cout << i << " ";
         }
         cout << endl;
     }
