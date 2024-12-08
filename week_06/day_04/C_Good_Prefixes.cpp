@@ -8,7 +8,7 @@ int main()
     cin >> t;
     while (t--)
     {
-        long n, cs = 0, mx = -1, cnt = 0;
+        long long n, cs = 0, mx = -1, cnt = 0;
         cin >> n;
         for (long long i = 0; i < n; i++)
         {
